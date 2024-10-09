@@ -66,3 +66,37 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.app.light {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.app.dark {
+  background-color: #333;
+  color: #f4f4f9;
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.parallax-container {
+  height: 100vh;
+  background-image: url("your-image.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.parallax-content {
+  text-align: center;
+  font-size: 2rem;
+}
