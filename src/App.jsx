@@ -82,9 +82,9 @@ function AppContent() {
   return (
     <>
       <Container theme={theme}>
-        <StyledButton onClick={toggleTheme}>
+        {/* <StyledButton onClick={toggleTheme}>
           Toggle {theme === "light" ? "Dark" : "Light"} Mode
-        </StyledButton>
+        </StyledButton> */}
         <Section height="80vh">
           <Header />
         </Section>
