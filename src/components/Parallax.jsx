@@ -1,31 +1,44 @@
 import React from "react";
+import { Parallax } from "react-scroll-parallax";
+import { useTheme } from "./Dark/LightMode.jsx";
 import styled from "styled-components";
 
-// Parallax wrapper for the background effect
-const ParallaxWrapper = styled.div`
-  background-image: url("your-parallax-background.jpg"); /* Replace with your image */
-  height: 100vh;
-  background-attachment: fixed;
+const ParallaxBackground = styled.div`
+  width: 100vw;
+  height: 120vh; /* Made taller to allow for movement */
+  background-image: url(${(props) =>
+    props.theme === "light" ? "/mountain.jpg" : "/stars.jpg"});
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
 `;
 
-// Wrapper for content that sits on top of the parallax background
-const ContentWrapper = styled.div`
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 20px;
-  color: white; /* Adjust text color for better visibility */
+const ParallaxContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
 `;
 
-const Parallax = ({ children }) => {
+const ParallaxComponent = () => {
+  const { theme } = useTheme();
+
   return (
-    <ParallaxWrapper>
-      <ContentWrapper>{children}</ContentWrapper>
-    </ParallaxWrapper>
+    <ParallaxContainer>
+      <Parallax
+        speed={-15} /* Changed to speed instead of translateY */
+        style={{
+          height: "100%",
+          width: "100%",
+        }}
+      >
+        <ParallaxBackground theme={theme} />
+      </Parallax>
+    </ParallaxContainer>
   );
 };
 
-export default Parallax;
+export default ParallaxComponent;

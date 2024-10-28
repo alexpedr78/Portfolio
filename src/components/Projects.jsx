@@ -1,21 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-// Main section for projects
 const ProjectSection = styled.section`
   border-radius: 5px;
   text-align: center;
   padding: 50px 0;
-  background-color: ${(props) =>
-    props.theme === "light" ? "#f0f0f0" : "#1e1e1e"};
-  transition: background-color 0.3s;
+  background-color: rgb0;
 `;
+//  background-color: ${(props) =>
+//   props.theme === "light" ? "#f0f0f0" : "#1e1e1e"};
+// transition: background-color 0.3s;
 const Title = styled.h2`
   color: ${(props) => (props.theme === "light" ? "#333" : "#f4f4f9")};
   font-size: 2.5rem;
   margin-bottom: 20px;
 `;
-// Grid layout for the project cards
 const ProjectGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -23,7 +22,6 @@ const ProjectGrid = styled.div`
   padding: 0 20px;
 `;
 
-// Individual project card styling with hover effect
 const ProjectCard = styled.div`
   border: 1px solid ${(props) => (props.theme === "light" ? "#ddd" : "#444")};
   padding: 20px;
@@ -49,11 +47,11 @@ const ProjectCard = styled.div`
   }
 `;
 
-// Button styling for call to actions like "Try it"
 const ProjectLink = styled.a`
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 20px;
+  padding: 8px 16px; // Reduced padding for a smaller button
+  font-size: 0.9rem; // Reduced font size
   background-color: ${(props) =>
     props.theme === "light" ? "#007bff" : "#555"};
   color: white;
@@ -66,7 +64,13 @@ const ProjectLink = styled.a`
       props.theme === "light" ? "#0056b3" : "#333"};
   }
 `;
-
+const ProjectImage = styled.img`
+  width: 100%;
+  height: auto;
+  max-height: 200px; // Limit image height for consistency
+  border-radius: 8px;
+  margin-bottom: 15px;
+`;
 const ProjectTags = styled.div`
   margin-bottom: 10px;
   display: flex;
@@ -89,6 +93,7 @@ function Projects() {
       <ProjectGrid>
         <ProjectCard>
           <h3>"Megalith"</h3>
+          <ProjectImage src="/mountain.jpg" alt="Megalith Project" />
           <ProjectTags>
             <Tag>React.js</Tag>
             <Tag>MongoDB</Tag>
@@ -107,6 +112,7 @@ function Projects() {
 
         <ProjectCard>
           <h3>"CleanMotherEarth"</h3>
+          <ProjectImage src="/mountain.jpg" alt="Megalith Project" />
           <ProjectTags>
             <Tag>React.js</Tag>
             <Tag>MongoDB</Tag>

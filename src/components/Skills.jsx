@@ -20,18 +20,29 @@ const SkillBadge = styled.span`
   border-radius: 5px;
   font-size: 1rem;
 `;
-
+const Title = styled.h2`
+  color: ${(props) => (props.theme === "light" ? "#333" : "#f4f4f9")};
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+`;
 function Skills() {
   return (
     <SkillsSection id="skills">
-      <h2>Skills</h2>
+      <Title>Skills</Title>
       <SkillsGrid>
         <SkillBadge>React</SkillBadge>
-        <SkillBadge>Node.js</SkillBadge>
+        <SkillBadge>React Native</SkillBadge>
         <SkillBadge>JavaScript</SkillBadge>
         <SkillBadge>HTML/CSS</SkillBadge>
+        <SkillBadge>Node.js</SkillBadge>
         <SkillBadge>Git</SkillBadge>
-        {/* Add more skills as needed */}
+
+        <SkillBadge>MongoDB</SkillBadge>
+        <SkillBadge>SQL, MySql</SkillBadge>
+        <SkillBadge>AWS</SkillBadge>
+        <SkillBadge>TailWind, Bootstrap, Figma</SkillBadge>
+        <SkillBadge>TailWind</SkillBadge>
+        <SkillBadge>Figma</SkillBadge>
       </SkillsGrid>
     </SkillsSection>
   );

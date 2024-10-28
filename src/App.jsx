@@ -7,9 +7,8 @@ import Skills from "./components/Skills.jsx";
 import Contact from "./components/Contact.jsx";
 import styled from "styled-components";
 import { ThemeProvider, useTheme } from "./components/Dark/LightMode.jsx";
-import Parallax from "./components/Parallax.jsx";
+import { useEffect, useState } from "react";
 
-// Styled button with dynamic theme-based colors
 const StyledButton = styled.button`
   margin: 20px;
   padding: 10px 20px;
@@ -31,24 +30,81 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh; // Add this line
+`;
+
+const Section = styled.div`
+  min-height: ${(props) => props.height || "100vh"};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 3em;
+  text-align: center;
+`;
+const ParallaxBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300vh; // Changed from 120% to 100vh
+  background-image: url("/stars.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; // Add this line
+  z-index: 0;
+  transform: ${(props) => `translateY(${props.offset}px)`};
+  transition: transform 0.1s ease-out;
+`;
+const EmptySection = styled.div`
+  min-height: 80vh; // You can adjust this value for more or less space
 `;
 
 function AppContent() {
-  const { theme, toggleTheme } = useTheme(); // Access the current theme and toggle function
+  const { theme, toggleTheme } = useTheme();
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Adjust the division factor (2) to control the parallax speed
+      // Higher number = slower movement
+      const offset = window.scrollY / 3;
+      setScrollOffset(-offset);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <GlobalStyle theme={theme} /> {/* Apply global styles based on theme */}
-      <StyledButton onClick={toggleTheme}>
-        {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
-      </StyledButton>
-      <Container>
-        <Header />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
+      <Container theme={theme}>
+        <StyledButton onClick={toggleTheme}>
+          Toggle {theme === "light" ? "Dark" : "Light"} Mode
+        </StyledButton>
+        <Section height="80vh">
+          <Header />
+        </Section>
+        <EmptySection></EmptySection>
+        <Section height="80vh">
+          <About />
+        </Section>
+        <Section height="80vh">
+          <Projects />
+        </Section>
+
+        <Section height="80vh">
+          <Skills />
+        </Section>
+
+        <Section height="80vh">
+          <Contact />
+        </Section>
       </Container>
+      <ParallaxBackground offset={scrollOffset} />
     </>
   );
 }
@@ -56,6 +112,7 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
+      <GlobalStyle />
       <AppContent />
     </ThemeProvider>
   );

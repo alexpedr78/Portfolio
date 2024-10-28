@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-// Main section for the about content
 const AboutSection = styled.section`
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px 20px;
-  background-color: ${(props) =>
-    props.theme === "light" ? "#f0f0f0" : "#1e1e1e"};
-  transition: background-color 0.3s;
+  background-color: rgb0;
 `;
+// background-color: ${(props) =>
+//   props.theme === "light" ? "#f0f0f0" : "#1e1e1e"};
+// transition: background-color 0.3s;
 
-// About text with hover effect and box shadow
 const AboutText = styled.div`
   max-width: 800px;
   border: 1px solid ${(props) => (props.theme === "light" ? "#ddd" : "#444")};
@@ -54,15 +53,15 @@ function About() {
         <h3>About Me</h3>
         <p>
           I’m a passionate <span>developer</span> with a focus on building
-          dynamic and scalable web applications. I specialize in modern web
-          technologies like <span>React</span>, <span>Node.js</span>, and more.
-          Always eager to learn, I’m driven to create solutions that are
-          efficient and scalable.
+          dynamic, scalable web applications. Specializing in modern web
+          technologies like <span>React</span> and <span>React Native</span>,
+          I'm always eager to learn and driven to create solutions that are both
+          efficient and impactful.
         </p>
         <p>
-          Let’s create something amazing together. My passion for coding goes
-          beyond just writing code—it's about delivering real-world solutions
-          that make an impact.
+          A big traveler, I’ve visited many countries and speak three languages
+          fluently. Open-minded and curious, I bring a wealth of diverse
+          experiences to my work and personal life.
         </p>
       </AboutText>
     </AboutSection>
