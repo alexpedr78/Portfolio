@@ -93,7 +93,7 @@ function Projects() {
       <ProjectGrid>
         <ProjectCard>
           <h3>"Megalith"</h3>
-          <ProjectImage src="/mountain.jpg" alt="Megalith Project" />
+          <ProjectImage src="/megalith.jpg" alt="Megalith Project" />
           <ProjectTags>
             <Tag>React.js</Tag>
             <Tag>MongoDB</Tag>
