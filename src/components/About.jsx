@@ -52,11 +52,10 @@ function About() {
       <AboutText>
         <h3>About Me</h3>
         <p>
-          I’m a passionate <span>developer</span> with a focus on building
-          dynamic, scalable web applications. Specializing in modern web
-          technologies like <span>React</span> and <span>React Native</span>,
-          I'm always eager to learn and driven to create solutions that are both
-          efficient and impactful.
+          I’m a passionate developer with a focus on building dynamic, scalable
+          web applications. Specializing in modern web technologies like React
+          and React Native, I'm always eager to learn and driven to create
+          solutions that are both efficient and impactful.
         </p>
         <p>
           A big traveler, I’ve visited many countries and speak three languages
