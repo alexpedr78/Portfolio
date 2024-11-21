@@ -98,11 +98,12 @@ function Projects() {
             <Tag>React.js</Tag>
             <Tag>MongoDB</Tag>
             <Tag>Express.js</Tag>
+            <Tag>Next.js</Tag>
           </ProjectTags>
           <p>
             A web application to catalog megalithic sites across France.
             Includes admin functionality for adding, editing, and deleting
-            sites.
+            sites. I am currently re-doing it in Next.js version.
           </p>
           <p>Hosted on Netlify.</p>
           <ProjectLink href="https://megalith.netlify.app/" target="_blank">
@@ -117,10 +118,13 @@ function Projects() {
             <Tag>React.js</Tag>
             <Tag>MongoDB</Tag>
             <Tag>Express.js</Tag>
+            <Tag>Next.js</Tag>
           </ProjectTags>
           <p>
             A web app connecting volunteers to clean up waste. Users can create
-            accounts, organize events, and help reduce waste impact.
+            accounts, organize events, and help reduce waste impact. I started
+            with React, still the one in production but i will swith to a next
+            Version soon.
           </p>
           <p>Planned updates include messaging and comment features.</p>
           <ProjectLink href="https://clean-earth.netlify.app/" target="_blank">
@@ -155,7 +159,7 @@ function Projects() {
             <Tag>Solidity</Tag>
           </ProjectTags>
           <p>
-            A project combining React Native with blockchain smart contracts.
+            A project combining React Native AR with blockchain smart contracts.
             Still under development with exciting potential.
           </p>
           <p>Link to the repo coming soon...</p>
